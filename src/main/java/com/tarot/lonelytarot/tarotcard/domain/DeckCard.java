@@ -1,10 +1,12 @@
 package com.tarot.lonelytarot.tarotcard.domain;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,23 +14,22 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor
-public class Deck {
+@Builder
+@AllArgsConstructor
+public class DeckCard {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int deckId;
+  private int deckCardId;
 
-  @Column(length = 2000, nullable = false)
-  private String question;
+  @ManyToOne(fetch = FetchType.LAZY)
+  private Deck deck;
 
-  @Column(length = 400, nullable = false)
-  private String spreadType;
+  @ManyToOne(fetch = FetchType.LAZY)
+  private Card card;
 
-  @Builder
-  public Deck(String question, String spreadType) {
-    this.question = question;
-    this.spreadType = spreadType;
-  }
+  private boolean isReversed;
 
+  private int cardOrder;
 
 }

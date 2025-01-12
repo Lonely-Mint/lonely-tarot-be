@@ -12,23 +12,18 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor
-public class Deck {
+public class Card {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int deckId;
+  private int cardId;
 
-  @Column(length = 2000, nullable = false)
-  private String question;
-
-  @Column(length = 400, nullable = false)
-  private String spreadType;
+  @Column(length = 500, nullable = false)
+  private String cardName;
 
   @Builder
-  public Deck(String question, String spreadType) {
-    this.question = question;
-    this.spreadType = spreadType;
+  public Card(String cardName) {
+    this.cardName = cardName;
   }
-
 
 }
