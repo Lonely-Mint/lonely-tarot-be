@@ -1,4 +1,4 @@
-package com.tarot.lonelytarot.tarotcard.domain;
+package com.tarot.lonelytarot.tarotcard.domain.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

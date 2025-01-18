@@ -1,5 +1,7 @@
-package com.tarot.lonelytarot.tarotcard.domain;
+package com.tarot.lonelytarot.tarotcard.domain.entity;
 
+import com.tarot.lonelytarot.tarotcard.domain.entity.Card;
+import com.tarot.lonelytarot.tarotcard.domain.entity.Deck;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
