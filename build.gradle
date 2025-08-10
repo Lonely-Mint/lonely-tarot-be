@@ -26,23 +26,40 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.h2database:h2'
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//implementation 'org.springframework.boot:spring-boot-starter-validation'
+	//implementation 'org.springframework.boot:spring-boot-starter-web'
+	//compileOnly 'org.projectlombok:lombok'
+	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//runtimeOnly 'com.h2database:h2'
+	//runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	//annotationProcessor 'org.projectlombok:lombok'
+	//testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
 	// open ai
-	implementation platform("org.springframework.ai:spring-ai-bom:1.0.0-SNAPSHOT")
+	//implementation platform("org.springframework.ai:spring-ai-bom:1.0.0-SNAPSHOT")
 	// Replace the following with the starter dependencies of specific modules you wish to use
-	implementation 'org.springframework.ai:spring-ai-openai'
+	//implementation 'org.springframework.ai:spring-ai-openai'
 
-	implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
+	//implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
+	
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // ✅ Spring AI (안정판 1.0.1)
+    implementation platform("org.springframework.ai:spring-ai-bom:1.0.1")
+    implementation "org.springframework.ai:spring-ai-starter-model-openai"   // 유료 API 쓰는 경우
+    // 또는 무료 로컬 모델이면 ↓로 교체
+    // implementation "org.springframework.ai:spring-ai-starter-model-ollama"
 }
 
 tasks.named('test') {
